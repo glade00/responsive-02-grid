@@ -13,6 +13,9 @@ $types: alkaliMetal lanthanide nobleGas transitionMetal postTransitionMetal
 .el__symbol {
   font-size: 40px;
 }
+.el__name {
+  font-size: 10px;
+}
 * {
   box-sizing: border-box;
 }
@@ -28,10 +31,33 @@ img {
     );
   }
 }
+@mixin landscape {
+  @media (min-aspect-ratio: 1/1) {
+    @content;
+  }
+}
+@for $i from 1 through 10 {
+  .el[data-period="#{$i}"] {
+    grid-row: $i;
+  }
+}
+@for $i from 1 through 20 {
+  .el[data-group="#{$i}"] {
+    grid-column: $i;
+  }
+}
 
 body {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-auto-rows: 150px;
   grid-gap: 1rem;
+  @include landscape {
+    @media screen and (min-width: 1400px) {
+      min-width: 100%;
+      min-height: 100vh;
+      grid: repeat(5, auto) / repeat(18, auto);
+      grid-gap: 1rem;
+    }
+  }
 }
