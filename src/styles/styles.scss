@@ -4,6 +4,14 @@ $types: alkaliMetal lanthanide nobleGas transitionMetal postTransitionMetal
 
 .el {
   background-color: lightgrey;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.el__symbol {
+  font-size: 40px;
 }
 * {
   box-sizing: border-box;
@@ -19,4 +27,11 @@ img {
       index($types, $type) * (360deg / length($types)) 50% 75%
     );
   }
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-auto-rows: 150px;
+  grid-gap: 1rem;
 }
