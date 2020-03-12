@@ -4,7 +4,8 @@
   "description": "Pour se familiariser avec les différentes propriétés : [Grid Garden](https://cssgridgarden.com/#fr)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "parcel src/index.html"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/glade00/responsive-02-grid#readme",
   "devDependencies": {
-    "parcel": "^1.12.4"
+    "parcel": "^1.12.4",
+    "sass": "^1.26.3"
   }
 }
